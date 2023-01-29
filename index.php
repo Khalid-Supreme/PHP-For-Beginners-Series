@@ -3,7 +3,6 @@
 class Car {
 
     public $brand;
-    public $year ;
 
     private $email;
 
@@ -30,25 +29,34 @@ class Car {
     
 }
 
+class Supercar extends Car{
+
+    public $cylinder;
+    
+    public function __construct($brand, $email, $cylinder){
+        $this->cylinder = $cylinder;
+        parent::__construct($brand, $email);
+    }
+
+}
+
 
 $carOne = new Car('Ford', 'fordmotors@supeme.com');
 
 
 $carTwo = new Car('Hyundai','hyundaigroup@supreme.com' );
 
+$carAlpha = new Supercar('Alfa-Romeo', 'alfa@supeme.com', 'v16');
 
 
-echo $carOne->getEmail() . '<br>';
 
+echo $carAlpha->brand;
 
 echo '<hr>';
+echo $carAlpha->getEmail();
+echo '<hr>';
+echo $carAlpha->cylinder;
 
-
-// echo $carTwo->getEmail() . '<br>';
-
-$carTwo->setEmail('nothyundaigroup@supreme.com') . '<br>';
-
-echo $carTwo->getEmail() . '<br>';
 
 
 
