@@ -3,8 +3,13 @@
 class Car {
 
     public $brand;
+    public $rating = 'Basic';
 
     private $email;
+
+    // public function kick(){
+    //     return $this->email . " has started the ignition";
+    // }
 
     public function __construct($brand, $email){  //constructor function is used here to set the values of the class variables by passing them as arguments
     
@@ -32,6 +37,12 @@ class Car {
 class Supercar extends Car{
 
     public $cylinder;
+    public $rating= 'Flagship';
+
+    public function kick(){
+        return $this->email . " has started the ignition";
+        // return parent::getEmail() . " has started the ignition"; //this will work instead, but let's continue
+    }
     
     public function __construct($brand, $email, $cylinder){
         $this->cylinder = $cylinder;
@@ -57,6 +68,10 @@ echo $carAlpha->getEmail();
 echo '<hr>';
 echo $carAlpha->cylinder;
 
+echo '<hr>';
+echo $carAlpha->rating;
+echo '<hr>';
+echo $carAlpha->kick();
 
 
 
