@@ -2,9 +2,9 @@
 
 class Car {
 
-    public $brand = 'Toyota';
-    public $model = 'Prius';
-    public $year = 2010;
+    public $brand;
+    public $model;
+    public $year ;
 
     public function start()
     {
@@ -12,21 +12,29 @@ class Car {
         echo $this->year . " said Vroom! Vroom";
     }
 
+    public function __construct($brand, $model, $year){  //constructor function is used here to set the values of the class variables by passing them as arguments
+        // $this->brand = "Honda"; 
+        // $this->model = "Civic";
+        // $this->year = date("Y");
+        $this->brand = $brand;
+        $this->model = $model;
+        $this->year = $year;
+    }
 }
 
-new Car();
-$carOne = new Car();
 
-$carTwo = new Car();
+$carOne = new Car('Ford', 'Focus', 2020);
+
+$carTwo = new Car('Hyundai', 'Accent', 1999);
 
 echo $carOne->brand . '<br>';
 echo $carOne->model . '<br>';
 echo $carTwo->start() . '<br>';
 
 echo '<hr>';
-$carTwo->brand = 'Honda';
-$carTwo->model = 'Civic';
-$carTwo->year = '1999';
+$carTwo->brand;
+$carTwo->model;
+$carTwo->year ;
 
 echo $carTwo->brand . '<br>';
 echo $carTwo->model . '<br>';
