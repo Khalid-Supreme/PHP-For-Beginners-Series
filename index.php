@@ -4,7 +4,7 @@ class Car {
 
     public $brand;
     public $model;
-    public $year ;
+    private $year ;
 
     public function start()
     {
@@ -13,9 +13,7 @@ class Car {
     }
 
     public function __construct($brand, $model, $year){  //constructor function is used here to set the values of the class variables by passing them as arguments
-        // $this->brand = "Honda"; 
-        // $this->model = "Civic";
-        // $this->year = date("Y");
+     
         $this->brand = $brand;
         $this->model = $model;
         $this->year = $year;
@@ -25,30 +23,22 @@ class Car {
 
 $carOne = new Car('Ford', 'Focus', 2020);
 
-$carTwo = new Car('Hyundai', 'Accent', 1999);
+$carTwo = new Car('Hyundai', 'Accent', date("Y-m-d",));
 
 echo $carOne->brand . '<br>';
 echo $carOne->model . '<br>';
-echo $carTwo->start() . '<br>';
+echo $carOne->start() . '<br>';
 
 echo '<hr>';
-$carTwo->brand;
-$carTwo->model;
-$carTwo->year ;
 
 echo $carTwo->brand . '<br>';
 echo $carTwo->model . '<br>';
 echo $carTwo->start() . '<br>';
+echo $carTwo->year = 2025;
 
 
 
-// get_class($carOne);
-// echo "I love " . get_class($carTwo);
 
-
-// print_r(get_class_methods(get_class($carOne)));
-
-// print_r( get_class_vars('Car'));
 
 ?>
 
