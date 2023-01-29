@@ -3,39 +3,52 @@
 class Car {
 
     public $brand;
-    public $model;
-    private $year ;
+    public $year ;
 
-    public function start()
-    {
-        // return "$this->year said Vroom! Vroom!!";
-        echo $this->year . " said Vroom! Vroom";
-    }
+    private $email;
 
-    public function __construct($brand, $model, $year){  //constructor function is used here to set the values of the class variables by passing them as arguments
-     
+    public function __construct($brand, $email){  //constructor function is used here to set the values of the class variables by passing them as arguments
+    
+        $this->email = $email;
         $this->brand = $brand;
-        $this->model = $model;
-        $this->year = $year;
     }
+    
+    // getters
+    public function getEmail(){ 
+        return $this->email;
+    }
+
+    //setters 
+    public function setEmail($email){ //
+        if(strpos($email, '@') > -1){
+            $this->email = $email;
+        }
+        
+    }
+
+
+    
 }
 
 
-$carOne = new Car('Ford', 'Focus', 2020);
+$carOne = new Car('Ford', 'fordmotors@supeme.com');
 
-$carTwo = new Car('Hyundai', 'Accent', date("Y-m-d",));
 
-echo $carOne->brand . '<br>';
-echo $carOne->model . '<br>';
-echo $carOne->start() . '<br>';
+$carTwo = new Car('Hyundai','hyundaigroup@supreme.com' );
+
+
+
+echo $carOne->getEmail() . '<br>';
+
 
 echo '<hr>';
 
-echo $carTwo->brand . '<br>';
-echo $carTwo->model . '<br>';
-echo $carTwo->start() . '<br>';
-echo $carTwo->year = 2025;
 
+// echo $carTwo->getEmail() . '<br>';
+
+$carTwo->setEmail('nothyundaigroup@supreme.com') . '<br>';
+
+echo $carTwo->getEmail() . '<br>';
 
 
 
