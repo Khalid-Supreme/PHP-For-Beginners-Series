@@ -19,9 +19,9 @@ class Car {
     }
 
     //setters 
-    public function setEmail($email){ //
-        if(strpos($email, '@') > -1){
-            $this->email = $email;
+    public function setEmail($newemail){ //
+        if(strpos($newemail, '@') > -1){
+            $this->email = $newemail;
         }
         
     }
@@ -31,7 +31,7 @@ class Car {
 }
 
 
-$carOne = new Car('Ford', 'fordmotors@supeme.com');
+$carOne = new Car('Ford', 'fordmotors@su peme.com');
 
 
 $carTwo = new Car('Hyundai','hyundaigroup@supreme.com' );
